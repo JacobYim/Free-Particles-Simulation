@@ -23,7 +23,7 @@ function setup() {
     createCanvas(window_width, window_height);  
     fps = []
     for(var i = 0; i < particle_number; i++){
-        fps[i] = new free_particle(window_width, g, dt, mass, T, k, null);
+        fps[i] = new free_particle(window_width, dt, mass, T, k, null);
     }
 }
 
@@ -47,7 +47,7 @@ function draw() {
     // put particle to right
     if (num_right > 0 ){
         for(var i = 0; i < int(num_right); i++){
-          fps.push(new free_particle(window_width, g, dt, mass, T, k, "right"));
+          fps.push(new free_particle(window_width, dt, mass, T, k, "right"));
           num_right = num_right - 1;
         }
     }
@@ -55,7 +55,7 @@ function draw() {
     // put particle to left
     if (num_left > 0 ){
         for(var i = 0; i < int(num_left); i++){
-            fps.push(new free_particle(window_width, g, dt, mass, T, k, "left"));
+            fps.push(new free_particle(window_width, dt, mass, T, k, "left"));
             num_left = num_left - 1;
         }
     }

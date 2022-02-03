@@ -1,5 +1,5 @@
 class free_particle{
-  constructor(width, g, dt, mass, T, k, position){
+  constructor(width, dt, mass, T, k, position){
     this.mass = mass;
     this.dt = dt;
     this.T = T;
