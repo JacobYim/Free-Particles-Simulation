@@ -86,12 +86,12 @@ class free_particle{
     // test
     var v = sqrt((-1)*(2*this.k*this.T/this.mass)*log(1-rand_num));
 
-    switch (position) {
+    switch (position){
       case 'right':
         // this.vx = find_intersect(rand_num, (-1)*vw, this.T, this.k, this.mass)*-1;
         // this.vx = v*-1;
         this.vx = Finv(F, alpha, vw, rand_num)*(-1);
-        // console.log("dif", this.vx-v*-1);
+        console.log("dif", this.vx-v*-1);
         // console.log(rand_num, this.vx);
         // this.vx = -1*Finv(F, alpha, (-1)*vw, rand_num);
         this.x = width/2; 
@@ -101,7 +101,7 @@ class free_particle{
         // this.vx = Finv(F, alpha, vw, rand_num);
         // this.vx = v*1;
         this.vx = Finv(F, alpha, (-1)*vw, rand_num);
-        // console.log("dif", this.vx-v);
+        console.log("dif", this.vx-v);
         // console.log(rand_num, this.vx);
         this.x = width*(-1)/2;
         break;

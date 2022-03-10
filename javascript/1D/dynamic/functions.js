@@ -5,7 +5,7 @@ function erf(x){
       neg = true;
       x = (-1)*x;
     } 
-    var dx = x/100000;
+    var dx = x/1000;
     for(var i = 0; i < x; i = i + dx){
       retval += dx * Math.exp(-1*(i**2));
     }
@@ -31,7 +31,7 @@ function f(alpha, vw, x) {
 }
 function F(alpha, vw, x) {
 // console.log("in F", x, f(alpha,vw, x), f(alpha, vw, 0))
-    return 1-(f(alpha,vw,x)/f(alpha, vw, 0))
+    return 1-(f(alpha,vw,x)/f(alpha, vw, 0));
 }
 
 function Finv(F, alpha, vw, y){
@@ -41,7 +41,7 @@ function Finv(F, alpha, vw, y){
     error = y - F(alpha, vw, x)
     // console.log("F(alpha, vw, x)", F(alpha, vw, x));
     // console.log("error", error);
-    while (abs(error) > 0.0001) {
+    while (abs(error) > 1e-9) {
         // console.log(x, "error", error);
         if (error > 0) {
             // print("error > 0");
